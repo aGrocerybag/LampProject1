@@ -1,7 +1,24 @@
+@-webkit-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
 @keyframes fadein {
     from { opacity: 0; }
     to   { opacity: 1; }
 }
+@-webkit-keyframes fadeInLeft {
+    from {
+      opacity: 0;
+      -webkit-transform: translate3d(-100%, 0, 0);
+      transform: translate3d(-100%, 0, 0);
+    }
+  
+    to {
+      opacity: 1;
+      -webkit-transform: translate3d(0, 0, 0);
+      transform: translate3d(0, 0, 0);
+    }
+  }
 @keyframes fadeInLeft {
     from {
       opacity: 0;
@@ -17,7 +34,7 @@
   }
 
 #component{
-    width: 54%;
+    width: 48%;
     margin: 0 auto; 
     background: white; 
     color: black; 
@@ -25,20 +42,25 @@
     position: relative;
     padding:5%;
     border: 1px solid grey;
-    box-shadow: 2px 4px 2px #2e2e2e;
-    animation: fadein 3s;
+    -webkit-box-shadow: 2px 4px 2px #2e2e2e;
+            box-shadow: 2px 4px 2px #2e2e2e;
+    -webkit-animation: fadein 3s;
+            animation: fadein 3s;
 }
 
     #component2{
-           animation: fadeInLeft 2s;
+           -webkit-animation: fadeInLeft 2s;
+                   animation: fadeInLeft 2s;
 
     }
     #component3{
-        animation: fadeInLeft 3s;
+        -webkit-animation: fadeInLeft 3s;
+                animation: fadeInLeft 3s;
 
     }
     #component4{
-        animation: fadeInLeft 4s;
+        -webkit-animation: fadeInLeft 4s;
+                animation: fadeInLeft 4s;
 
     }
   body{

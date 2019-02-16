@@ -9,6 +9,7 @@
 </head>
 <body>
     <div id="component">
+        <a href ="https://en.wikipedia.org/wiki/Microwave_transmission">Click here to learn more </a>
         <h1>Microwave</h1>
     <div id="component2">
     <img src="wave.gif" id="headerIMG"/>
