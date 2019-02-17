@@ -9,10 +9,11 @@
 </head>
 <body>
     <div id="component">
-        <a href ="https://en.wikipedia.org/wiki/Microwave_transmission">Click here to learn more </a>
+        <a href ="https://en.wikipedia.org/wiki/Microwave_transmission">Click here to learn more </a><br/>
+        <a href ="https://github.com/aGrocerybag/LampProject1">Github </a>
         <h1>Microwave</h1>
     <div id="component2">
-    <img src="wave.gif" id="headerIMG"/>
+    <img src="./image/wave.gif" id="headerIMG"/>
     </div>
     <div id="component3">
     <p>
@@ -21,6 +22,11 @@
     </div>
     <div id ="component4">
     <h1>CSV Upload</h1>
+    <p> To use the .CSV uploader:
+        click on the browse button below to choose a .csv format microwave path file, 
+        click the submit button to upload the .csv file. Note the file must be .csv format and the
+        content of the file must not be empty, each file uploaded should have a limited file size of 20mb.
+    </P>
     <form action="upload.php" method="POST" enctype="multipart/form-data">
      <input type="file" name="file">
      <input type="submit" name="sumbmitFile">
