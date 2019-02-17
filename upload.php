@@ -66,22 +66,42 @@ else{
  function convert_csv($filename){
     $row = 1;
     if (($handle = fopen($filename, "r")) !== FALSE) {
+        $db_conn = connect_db()
+        $csv_str = "( ";
         while (($data = fgetcsv($handle, 1000, ",")) !== FALSE) {
             $num = count($data);
             echo "<p> $num fields in line $row: <br /></p>\n";
             $row++;
             for ($c=0; $c < $num; $c++) {
                 echo $data[$c] . "<br />\n";
+                $content= $db_conn->real_escape_string($data[$c]);
+                $csv_str .= "'".$content."',";
             }
+            $csv_str .= ")"
+            $qry = "insert into csvStorage (mcData1,mcData2,mcData3,mcData4,mcData5 ) values".$csv_str.";";
+            $db_conn->query($qry);
         }
         fclose($handle);
+        disconnect_db($db_conn)
     }
 }
 
  //connect database 
+ function connect_db(){
+    $db_conn = new mysqli('localhost', 'root', '!Lamp1!', 'csvStorage');
+    if ($db_conn->connect_errno) {
+        printf ("Could not connect to database server\n Error: "
+            .$db_conn->connect_errno ."\n Report: "
+            .$db_conn->connect_error."\n");
+        die;
+    }
+    return $db_conn;
+}
 
- //insert into database string processing 
-
+ //db discounnect
+ function disconnect_db($db_conn){
+    $db_conn->close();
+}
  //echo go back
  function backward(){
      echo "   
